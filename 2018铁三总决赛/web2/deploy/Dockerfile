@@ -51,6 +51,6 @@ RUN service mysql start \
 COPY src /var/www/html 
 RUN chown www-data:www-data /var/www/html -R
 RUN service apache2 start
-COPY httpd-foreground /usr/bin
+COPY httpd-foreground /usr/bin/
 EXPOSE 80
 CMD ["dockered"]
