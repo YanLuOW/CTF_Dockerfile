@@ -1,7 +1,10 @@
-MAINTAINER EVatom "15603401903@163.com"  
-
 # Pull base image 
 FROM ubuntu
+
+MAINTAINER EVatom "15603401903@163.com"  
+
+
+
 
 # update source  
 RUN rm /etc/apt/sources.list
