@@ -8,7 +8,7 @@ MAINTAINER EVatom "15603401903@163.com"
 
 # update source  
 RUN rm /etc/apt/sources.list
-COPY sources.list /etc/apt
+COPY 。/sources.list /etc/apt/
 
 #for apt to be nointeractive
 ENV DEBIAN_FRONTEND noninteractive
