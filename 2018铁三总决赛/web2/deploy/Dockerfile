@@ -48,6 +48,9 @@ RUN service mysql start \
     && mysql -u root -pa8gU_HaPqM </root/wordpress.sql \
     && mysql -u root -pa8gU_HaPqM -e "show databases;"
 
+RUN  mysql -u root -pa8gU_HaPqM -e "UPDATE wp_options set option_value='http://192.168.70.148/wordpress' where option_name='site_url';" # 将该项中的ip改为你自己的ip，否则页面跳转会出问题
+RUN  mysql -u root -pa8gU_HaPqM -e "UPDATE wp_options set option_value='http://192.168.70.148/wordpress' where option_name='home';"     # 同上
+
 COPY src /var/www/html 
 RUN chown www-data:www-data /var/www/html -R
 RUN service apache2 start
