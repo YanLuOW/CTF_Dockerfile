@@ -47,8 +47,8 @@ RUN service mysql start \
     && mysql -u root -pa8gU_HaPqM -e "show databases;" \
     && mysql -u root -pa8gU_HaPqM </root/wordpress.sql \
     && mysql -u root -pa8gU_HaPqM -e "show databases;" \
-    && mysql -u root -pa8gU_HaPqM -e "UPDATE wp_options set option_value='http://192.168.70.148/wordpress' where option_name='site_url';"  \
-    && mysql -u root -pa8gU_HaPqM -e "UPDATE wp_options set option_value='http://192.168.70.148/wordpress' where option_name='home';"     
+    && mysql -u root -pa8gU_HaPqM -e "use wordpress;UPDATE wp_options set option_value='http://192.168.70.148/wordpress' where option_name='siteurl';"  \
+    && mysql -u root -pa8gU_HaPqM -e "use wordpress;UPDATE wp_options set option_value='http://192.168.70.148/wordpress' where option_name='home';"     
 # 将以上两项中的ip改为你自己的ip，否则页面跳转会出问题
 
 COPY src /var/www/html 
